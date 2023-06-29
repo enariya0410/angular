@@ -5,19 +5,19 @@ pipeline {
   stages {
     stage('install') {
       steps{
-        echo'install'
+        sh "npm install"
       }
     }
 
     stage('build') {
       steps{
-        echo'build'
+        sh "npm run build"
       }
     }
 
     stage('deploy') {
       steps {
-        sh "terraform apply --var-file='config/${params.tfenv}.tfvars' --auto-approve"
+        sh "npm run deploy"
       }
     }
   }
