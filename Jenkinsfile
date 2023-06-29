@@ -1,11 +1,7 @@
 pipeline {
   agent {
-    label 'jenkins-slave'
+    label 'angular'
   }
-
-  environment {
-  }
-
   stages {
     stage('install') {
       echo'install'
